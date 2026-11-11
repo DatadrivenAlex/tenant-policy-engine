@@ -1,0 +1,12 @@
+rules:
+  - id: analysts-read
+    effect: allow
+    roles: [analyst]
+    actions: ["read:*"]
+    resource_types: [report]
+    required_attributes: {clearance: internal}
+  - id: export-block
+    effect: deny
+    roles: ["*"]
+    actions: ["read:export"]
+    resource_types: ["*"]
